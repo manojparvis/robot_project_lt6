@@ -1,101 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220506 09:45:25.535" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo4 Suite" source="C:\LT6\robot_Project\selenium_suit\demo4_suite.robot">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220506 12:04:14.356" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo5 Tabs Suite" source="C:\LT6\robot_Project\selenium_suit\demo5_tabs_suite.robot">
 <test id="s1-t1" name="TC1" line="6">
 <kw name="Append To Environment Variable" library="OperatingSystem">
 <arg>path</arg>
 <arg>C:\\LT6\\driver</arg>
 <doc>Appends given ``values`` to environment variable ``name``.</doc>
-<msg timestamp="20220506 09:45:25.957" level="INFO">Environment variable 'path' set to value 'C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\;C:\Users\MANOJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\MANOJ\AppData\Local\Programs\Microsoft VS Code\bin;C:\LT6\driver'.</msg>
-<status status="PASS" starttime="20220506 09:45:25.956" endtime="20220506 09:45:25.957"/>
+<msg timestamp="20220506 12:04:15.002" level="INFO">Environment variable 'path' set to value 'C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\;C:\Users\MANOJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\MANOJ\AppData\Local\Programs\Microsoft VS Code\bin;C:\LT6\driver'.</msg>
+<status status="PASS" starttime="20220506 12:04:15.002" endtime="20220506 12:04:15.002"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>url=https://www.salesforce.com/in/form/signup/freetrial-sales/?d=70130000000Enyk</arg>
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220506 09:45:25.957" level="INFO">Opening browser 'chrome' to base url 'https://www.salesforce.com/in/form/signup/freetrial-sales/?d=70130000000Enyk'.</msg>
-<status status="PASS" starttime="20220506 09:45:25.957" endtime="20220506 09:45:37.362"/>
+<msg timestamp="20220506 12:04:15.003" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220506 12:04:15.003" endtime="20220506 12:04:19.057"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220506 09:45:37.363" endtime="20220506 09:45:37.693"/>
+<status status="PASS" starttime="20220506 12:04:19.058" endtime="20220506 12:04:19.463"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220506 09:45:37.695" endtime="20220506 09:45:37.702"/>
+<status status="PASS" starttime="20220506 12:04:19.497" endtime="20220506 12:04:19.506"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=UserFirstName</arg>
-<arg>manoj</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:37.703" level="INFO">Typing text 'manoj' into text field 'name=UserFirstName'.</msg>
-<status status="PASS" starttime="20220506 09:45:37.702" endtime="20220506 09:45:37.958"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=UserLastName</arg>
-<arg>kumar</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:37.969" level="INFO">Typing text 'kumar' into text field 'name=UserLastName'.</msg>
-<status status="PASS" starttime="20220506 09:45:37.969" endtime="20220506 09:45:38.329"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=UserEmail</arg>
-<arg>manoj@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:38.330" level="INFO">Typing text 'manoj@gmail.com' into text field 'name=UserEmail'.</msg>
-<status status="PASS" starttime="20220506 09:45:38.330" endtime="20220506 09:45:38.587"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=UserTitle</arg>
-<arg>IT Manager</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220506 09:45:38.588" level="INFO">Selecting options from selection list 'name=UserTitle' by label IT Manager.</msg>
-<status status="PASS" starttime="20220506 09:45:38.588" endtime="20220506 09:45:38.720"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>name=CompanyName</arg>
-<arg>LT</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:38.721" level="INFO">Typing text 'LT' into text field 'name=CompanyName'.</msg>
-<status status="PASS" starttime="20220506 09:45:38.720" endtime="20220506 09:45:38.891"/>
-</kw>
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<arg>name=CompanyEmployees</arg>
-<arg>250</arg>
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<msg timestamp="20220506 09:45:38.898" level="INFO">Selecting options from selection list 'name=CompanyEmployees' by value 250.</msg>
-<status status="PASS" starttime="20220506 09:45:38.897" endtime="20220506 09:45:39.033"/>
-</kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name=CompanyCountry</arg>
-<arg>India</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220506 09:45:39.034" level="INFO">Selecting options from selection list 'name=CompanyCountry' by label India.</msg>
-<status status="PASS" starttime="20220506 09:45:39.033" endtime="20220506 09:45:39.117"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=https://www.medibuddy.in/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220506 12:04:19.516" level="INFO">Opening url 'https://www.medibuddy.in/'</msg>
+<status status="PASS" starttime="20220506 12:04:19.516" endtime="20220506 12:04:22.654"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath=//div[@class='checkbox-ui']</arg>
+<arg>id=wzrk-cancel</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:39.118" level="INFO">Clicking element 'xpath=//div[@class='checkbox-ui']'.</msg>
-<status status="PASS" starttime="20220506 09:45:39.118" endtime="20220506 09:45:39.235"/>
+<msg timestamp="20220506 12:04:22.663" level="INFO">Clicking element 'id=wzrk-cancel'.</msg>
+<status status="PASS" starttime="20220506 12:04:22.656" endtime="20220506 12:04:33.253"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>name=start my free trial</arg>
+<arg>link=For Employer</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 09:45:39.237" level="INFO">Clicking element 'name=start my free trial'.</msg>
-<status status="PASS" starttime="20220506 09:45:39.236" endtime="20220506 09:45:39.598"/>
+<msg timestamp="20220506 12:04:33.254" level="INFO">Clicking element 'link=For Employer'.</msg>
+<status status="PASS" starttime="20220506 12:04:33.253" endtime="20220506 12:04:33.678"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MediBuddy LaunchPad</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220506 12:04:33.679" endtime="20220506 12:04:41.583"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=getInTouchName</arg>
+<arg>Manoj</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:41.589" level="INFO">Typing text 'Manoj' into text field 'id=getInTouchName'.</msg>
+<status status="PASS" starttime="20220506 12:04:41.584" endtime="20220506 12:04:41.979"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=getInTouchEmail</arg>
+<arg>manoj14@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:41.983" level="INFO">Typing text 'manoj14@gmail.com' into text field 'id=getInTouchEmail'.</msg>
+<status status="PASS" starttime="20220506 12:04:41.981" endtime="20220506 12:04:42.799"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=getInTouchMobile</arg>
+<arg>63833</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:42.814" level="INFO">Typing text '63833' into text field 'id=getInTouchMobile'.</msg>
+<status status="PASS" starttime="20220506 12:04:42.814" endtime="20220506 12:04:43.095"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=getInTouchDesignation</arg>
+<arg>Trainer</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:43.096" level="INFO">Typing text 'Trainer' into text field 'id=getInTouchDesignation'.</msg>
+<status status="PASS" starttime="20220506 12:04:43.096" endtime="20220506 12:04:43.444"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=getInTouchEmpCount</arg>
+<arg>40</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:43.447" level="INFO">Typing text '40' into text field 'id=getInTouchEmpCount'.</msg>
+<status status="PASS" starttime="20220506 12:04:43.447" endtime="20220506 12:04:43.665"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[@class='btn-primary mt-10 w-full']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220506 12:04:43.672" level="INFO">Clicking element 'xpath=//button[@class='btn-primary mt-10 w-full']'.</msg>
+<status status="PASS" starttime="20220506 12:04:43.667" endtime="20220506 12:04:43.896"/>
 </kw>
 <kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>xpath=//span[contains(@id,'UserPhone')]</arg>
-<arg>Enter a valid phone number</arg>
+<arg>xpath=//div[@class='text-red-600 ml-2']</arg>
+<arg>Mobile Number should be 10 digits</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220506 09:45:39.600" level="INFO">Verifying element 'xpath=//span[contains(@id,'UserPhone')]' contains exact text 'Enter a valid phone number'.</msg>
-<status status="PASS" starttime="20220506 09:45:39.599" endtime="20220506 09:45:39.775"/>
+<msg timestamp="20220506 12:04:43.915" level="INFO">Verifying element 'xpath=//div[@class='text-red-600 ml-2']' contains exact text 'Mobile Number should be 10 digits'.</msg>
+<status status="PASS" starttime="20220506 12:04:43.913" endtime="20220506 12:04:44.016"/>
 </kw>
-<status status="PASS" starttime="20220506 09:45:25.955" endtime="20220506 09:45:39.775"/>
+<status status="PASS" starttime="20220506 12:04:15.001" endtime="20220506 12:04:44.023"/>
 </test>
-<status status="PASS" starttime="20220506 09:45:25.539" endtime="20220506 09:45:39.777"/>
+<status status="PASS" starttime="20220506 12:04:14.365" endtime="20220506 12:04:44.038"/>
 </suite>
 <statistics>
 <total>
@@ -104,7 +106,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Demo4 Suite">Demo4 Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo5 Tabs Suite">Demo5 Tabs Suite</stat>
 </suite>
 </statistics>
 <errors>
