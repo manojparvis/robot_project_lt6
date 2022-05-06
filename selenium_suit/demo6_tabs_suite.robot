@@ -14,4 +14,4 @@ TC1
     Input Text    id=input_username    admin
     Input Password    id=input_password    qwerty
     Click Element    id=input_go
-    Element Should Contain    xpath=(//div[@role='alert'])[3]    Access denied for users
+    Element Should Contain    xpath=(//div[@role='alert'])[3]    Access denied for user

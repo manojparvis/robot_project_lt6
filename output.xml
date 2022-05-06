@@ -1,88 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220506 14:19:21.362" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo6 Tabs Suite" source="C:\LT6\robot_Project\selenium_suit\demo6_tabs_suite.robot">
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220506 15:09:12.539" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo7 Frame Suite" source="C:\LT6\robot_Project\selenium_suit\demo7_frame_suite.robot">
 <test id="s1-t1" name="TC1" line="6">
 <kw name="Append To Environment Variable" library="OperatingSystem">
 <arg>path</arg>
 <arg>C:\\LT6\\driver</arg>
 <doc>Appends given ``values`` to environment variable ``name``.</doc>
-<msg timestamp="20220506 14:19:21.690" level="INFO">Environment variable 'path' set to value 'C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\;C:\Users\MANOJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\MANOJ\AppData\Local\Programs\Microsoft VS Code\bin;C:\LT6\driver'.</msg>
-<status status="PASS" starttime="20220506 14:19:21.690" endtime="20220506 14:19:21.690"/>
+<msg timestamp="20220506 15:09:12.930" level="INFO">Environment variable 'path' set to value 'C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\MANOJ\AppData\Local\Programs\Python\Python310\;C:\Users\MANOJ\AppData\Local\Microsoft\WindowsApps;;C:\Users\MANOJ\AppData\Local\Programs\Microsoft VS Code\bin;C:\LT6\driver'.</msg>
+<status status="PASS" starttime="20220506 15:09:12.930" endtime="20220506 15:09:12.930"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220506 14:19:21.690" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220506 14:19:21.690" endtime="20220506 14:19:23.567"/>
+<msg timestamp="20220506 15:09:12.930" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220506 15:09:12.930" endtime="20220506 15:09:16.001"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220506 14:19:23.568" endtime="20220506 14:19:23.722"/>
+<status status="PASS" starttime="20220506 15:09:16.002" endtime="20220506 15:09:16.263"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220506 14:19:23.722" endtime="20220506 14:19:23.722"/>
+<status status="PASS" starttime="20220506 15:09:16.263" endtime="20220506 15:09:16.278"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
-<arg>url=https://www.db4free.net/</arg>
+<arg>url=https://netbanking.hdfcbank.com/netbanking/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220506 14:19:23.722" level="INFO">Opening url 'https://www.db4free.net/'</msg>
-<status status="PASS" starttime="20220506 14:19:23.722" endtime="20220506 14:19:28.010"/>
+<msg timestamp="20220506 15:09:16.278" level="INFO">Opening url 'https://netbanking.hdfcbank.com/netbanking/'</msg>
+<status status="PASS" starttime="20220506 15:09:16.278" endtime="20220506 15:09:17.993"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>partial link=phpMyAdmin</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 14:19:28.013" level="INFO">Clicking element 'partial link=phpMyAdmin'.</msg>
-<status status="PASS" starttime="20220506 14:19:28.011" endtime="20220506 14:19:28.158"/>
-</kw>
-<kw name="Switch Window" library="SeleniumLibrary">
-<arg>phpMyAdmin</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20220506 14:19:28.159" endtime="20220506 14:19:31.876"/>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>xpath=//frame[@name='login_page']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20220506 15:09:17.996" level="INFO">Selecting frame 'xpath=//frame[@name='login_page']'.</msg>
+<status status="PASS" starttime="20220506 15:09:17.996" endtime="20220506 15:09:18.072"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>id=input_username</arg>
-<arg>admin</arg>
+<arg>name=fldLoginUserId</arg>
+<arg>test123</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 14:19:31.877" level="INFO">Typing text 'admin' into text field 'id=input_username'.</msg>
-<status status="PASS" starttime="20220506 14:19:31.876" endtime="20220506 14:19:32.022"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id=input_password</arg>
-<arg>qwerty</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220506 14:19:32.024" level="INFO">Typing password into text field 'id=input_password'.</msg>
-<msg timestamp="20220506 14:19:32.070" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220506 14:19:32.142" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220506 14:19:32.023" endtime="20220506 14:19:32.142"/>
+<msg timestamp="20220506 15:09:18.072" level="INFO">Typing text 'test123' into text field 'name=fldLoginUserId'.</msg>
+<status status="PASS" starttime="20220506 15:09:18.072" endtime="20220506 15:09:18.191"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>id=input_go</arg>
+<arg>link=CONTINUE</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220506 14:19:32.143" level="INFO">Clicking element 'id=input_go'.</msg>
-<status status="PASS" starttime="20220506 14:19:32.143" endtime="20220506 14:19:33.033"/>
+<msg timestamp="20220506 15:09:18.192" level="INFO">Clicking element 'link=CONTINUE'.</msg>
+<status status="PASS" starttime="20220506 15:09:18.192" endtime="20220506 15:09:19.128"/>
 </kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=(//div[@role='alert'])[3]</arg>
-<arg>Access denied for users</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220506 14:19:33.348" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20220506 14:19:33.349" level="FAIL">Element 'xpath=(//div[@role='alert'])[3]' should have contained text 'Access denied for users' but its text was 'Error 1045: Access denied for user. Additional error information may be available, but is being hidden by the $cfg['Servers'][$i]['hide_connection_errors'] configuration directive.'.</msg>
-<status status="FAIL" starttime="20220506 14:19:33.034" endtime="20220506 14:19:33.352"/>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20220506 15:09:19.130" endtime="20220506 15:09:19.134"/>
 </kw>
-<status status="FAIL" starttime="20220506 14:19:21.690" endtime="20220506 14:19:33.353">Element 'xpath=(//div[@role='alert'])[3]' should have contained text 'Access denied for users' but its text was 'Error 1045: Access denied for user. Additional error information may be available, but is being hidden by the $cfg['Servers'][$i]['hide_connection_errors'] configuration directive.'.</status>
+<status status="PASS" starttime="20220506 15:09:12.930" endtime="20220506 15:09:19.135"/>
 </test>
-<status status="FAIL" starttime="20220506 14:19:21.362" endtime="20220506 14:19:33.355"/>
+<status status="PASS" starttime="20220506 15:09:12.555" endtime="20220506 15:09:19.136"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Demo6 Tabs Suite">Demo6 Tabs Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo7 Frame Suite">Demo7 Frame Suite</stat>
 </suite>
 </statistics>
 <errors>
