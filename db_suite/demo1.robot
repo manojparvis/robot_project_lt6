@@ -12,10 +12,10 @@ Tc2
     Table Must Exist    Products
     Row Count Is Equal To X    select * from Products    81
 Tc3
-    Execute Sql String    Insert into Products (product_id,productname,description) values('99007717','sakthi','name')
+    Execute Sql String    Insert into Products (product_id,productname,description) values('99007717','manoj','name')
     Row Count Is Equal To X    select * from Products where product_id=99007717    1
 Tc4
-    Execute Sql String    update Products set productname='sakthi' where product_id=35656
+    Execute Sql String    update Products set productname='manoj' where product_id=35656
     Row Count Is Equal To X    select * from Products where product_id=99007717     1
 Tc5
     ${a}        Query    select * from Products
