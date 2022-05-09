@@ -1,209 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220509 09:26:45.368" rpa="false" schemaversion="3">
-<suite id="s1" name="Demo1" source="C:\LT6\robot_Project\db_suite\demo1.robot">
-<test id="s1-t1" name="Tc1" line="6">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>dbapiModuleName=pymysql</arg>
-<arg>dbName=dbfree_db</arg>
-<arg>dbUsername=dbfree_db</arg>
-<arg>dbPassword=12345678</arg>
-<arg>dbHost=db4free.net</arg>
-<arg>dbPort=3306</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220509 09:26:45.710" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220509 09:26:45.422" endtime="20220509 09:26:54.117"/>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220509 13:56:06.621" rpa="false" schemaversion="3">
+<suite id="s1" name="Demo3" source="C:\LT6\robot_Project\appiumSuite\demo3.robot">
+<test id="s1-t1" name="TC1" line="6">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>remote_url=http://hub-cloud.browserstack.com/wd/hub</arg>
+<arg>browserstack.user=manojparvis_zSVaI6</arg>
+<arg>browserstack.key=M9dRwaLXVBvhP7qsDrPU</arg>
+<arg>app=bs://ceb84225d81d45c772909507e03b07142356b640</arg>
+<arg>device=Google Pixel 3</arg>
+<arg>os_version=9.0</arg>
+<arg>project=lt6_project_signup</arg>
+<arg>build=lt6_build</arg>
+<arg>name=khanacademy test</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220509 13:56:07.007" endtime="20220509 13:56:33.399"/>
 </kw>
-<kw name="Row Count" library="DatabaseLibrary">
-<var>${row_count}</var>
-<arg>select * from Products</arg>
-<doc>Uses the input `selectStatement` to query the database and returns the number of rows from the query. Set
-optional input `sansTran` to True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:26:54.118" level="INFO">Executing : Row Count  |  select * from Products </msg>
-<msg timestamp="20220509 09:26:55.328" level="INFO">${row_count} = 123</msg>
-<status status="PASS" starttime="20220509 09:26:54.117" endtime="20220509 09:26:55.328"/>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>50s</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<status status="PASS" starttime="20220509 13:56:33.400" endtime="20220509 13:56:33.401"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${row_count}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220509 09:26:55.344" endtime="20220509 09:26:55.345"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:33.402" endtime="20220509 13:56:35.929"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>${row_count}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220509 09:26:55.345" level="INFO">123</msg>
-<status status="PASS" starttime="20220509 09:26:55.345" endtime="20220509 09:26:55.345"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Dismiss']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:35.931" level="INFO">Clicking element 'xpath=//*[@text='Dismiss']'.</msg>
+<status status="PASS" starttime="20220509 13:56:35.929" endtime="20220509 13:56:36.952"/>
 </kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220509 09:26:55.349" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220509 09:26:55.347" endtime="20220509 09:26:55.349"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@content-desc='Settings']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:36.953" endtime="20220509 13:56:37.805"/>
 </kw>
-<status status="PASS" starttime="20220509 09:26:45.421" endtime="20220509 09:26:55.349"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@content-desc='Settings']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:37.808" level="INFO">Clicking element 'xpath=//*[@content-desc='Settings']'.</msg>
+<status status="PASS" starttime="20220509 13:56:37.806" endtime="20220509 13:56:39.086"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:39.086" endtime="20220509 13:56:40.050"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign in']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:40.052" level="INFO">Clicking element 'xpath=//*[@text='Sign in']'.</msg>
+<status status="PASS" starttime="20220509 13:56:40.050" endtime="20220509 13:56:41.335"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign up with email']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:41.336" endtime="20220509 13:56:41.978"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Sign up with email']</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:41.980" level="INFO">Clicking element 'xpath=//*[@text='Sign up with email']'.</msg>
+<status status="PASS" starttime="20220509 13:56:41.979" endtime="20220509 13:56:43.030"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='First name']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:43.031" endtime="20220509 13:56:43.896"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//*[@text='First name']</arg>
+<arg>manoj</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:43.898" level="INFO">Typing text 'manoj' into text field 'xpath=//*[@text='First name']'</msg>
+<status status="PASS" starttime="20220509 13:56:43.896" endtime="20220509 13:56:45.808"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>xpath=//*[@text='Last name']</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220509 13:56:45.808" endtime="20220509 13:56:46.445"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>xpath=//*[@text='Last name']</arg>
+<arg>kumar</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220509 13:56:46.448" level="INFO">Typing text 'kumar' into text field 'xpath=//*[@text='Last name']'</msg>
+<status status="PASS" starttime="20220509 13:56:46.446" endtime="20220509 13:56:47.786"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220509 13:56:47.786" endtime="20220509 13:56:49.442"/>
+</kw>
+<status status="PASS" starttime="20220509 13:56:07.006" endtime="20220509 13:56:49.443"/>
 </test>
-<test id="s1-t2" name="Tc2" line="11">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>dbapiModuleName=pymysql</arg>
-<arg>dbName=dbfree_db</arg>
-<arg>dbUsername=dbfree_db</arg>
-<arg>dbPassword=12345678</arg>
-<arg>dbHost=db4free.net</arg>
-<arg>dbPort=3306</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220509 09:26:55.356" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220509 09:26:55.352" endtime="20220509 09:27:04.662"/>
-</kw>
-<kw name="Table Must Exist" library="DatabaseLibrary">
-<arg>Products</arg>
-<doc>Check if the table given exists in the database. Set optional input `sansTran` to True to run command without an
-explicit transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:27:04.663" level="INFO">Executing : Table Must Exist  |  Products </msg>
-<msg timestamp="20220509 09:27:04.663" level="INFO">Executing : Row Count  |  SELECT * FROM information_schema.tables WHERE table_name='Products' </msg>
-<status status="PASS" starttime="20220509 09:27:04.663" endtime="20220509 09:27:11.112"/>
-</kw>
-<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
-<arg>select * from Products</arg>
-<arg>81</arg>
-<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
-will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
-transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:27:11.113" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products  |  81 </msg>
-<msg timestamp="20220509 09:27:11.114" level="INFO">Executing : Row Count  |  select * from Products </msg>
-<msg timestamp="20220509 09:27:11.525" level="FAIL">Expected same number of rows to be returned from 'select * from Products' than the returned rows of 123</msg>
-<status status="FAIL" starttime="20220509 09:27:11.113" endtime="20220509 09:27:11.557"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220509 09:27:11.559" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220509 09:27:11.559" endtime="20220509 09:27:11.561"/>
-</kw>
-<status status="FAIL" starttime="20220509 09:26:55.352" endtime="20220509 09:27:11.562">Expected same number of rows to be returned from 'select * from Products' than the returned rows of 123</status>
-</test>
-<test id="s1-t3" name="Tc3" line="14">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>dbapiModuleName=pymysql</arg>
-<arg>dbName=dbfree_db</arg>
-<arg>dbUsername=dbfree_db</arg>
-<arg>dbPassword=12345678</arg>
-<arg>dbHost=db4free.net</arg>
-<arg>dbPort=3306</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220509 09:27:11.566" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220509 09:27:11.565" endtime="20220509 09:27:12.545"/>
-</kw>
-<kw name="Execute Sql String" library="DatabaseLibrary">
-<arg>Insert into Products (product_id,productname,description) values('99007717','manoj','name')</arg>
-<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
-True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:27:12.546" level="INFO">Executing : Execute SQL String  |  Insert into Products (product_id,productname,description) values('99007717','manoj','name') </msg>
-<msg timestamp="20220509 09:27:13.060" level="FAIL">IntegrityError: (1062, "Duplicate entry '99007717' for key 'Products.PRIMARY'")</msg>
-<status status="FAIL" starttime="20220509 09:27:12.546" endtime="20220509 09:27:13.065"/>
-</kw>
-<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
-<arg>select * from Products where product_id=99007717</arg>
-<arg>1</arg>
-<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
-will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
-transaction commit or rollback.</doc>
-<status status="NOT RUN" starttime="20220509 09:27:13.066" endtime="20220509 09:27:13.066"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220509 09:27:13.067" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220509 09:27:13.067" endtime="20220509 09:27:13.068"/>
-</kw>
-<status status="FAIL" starttime="20220509 09:27:11.564" endtime="20220509 09:27:13.069">IntegrityError: (1062, "Duplicate entry '99007717' for key 'Products.PRIMARY'")</status>
-</test>
-<test id="s1-t4" name="Tc4" line="17">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>dbapiModuleName=pymysql</arg>
-<arg>dbName=dbfree_db</arg>
-<arg>dbUsername=dbfree_db</arg>
-<arg>dbPassword=12345678</arg>
-<arg>dbHost=db4free.net</arg>
-<arg>dbPort=3306</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220509 09:27:13.073" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220509 09:27:13.071" endtime="20220509 09:27:14.188"/>
-</kw>
-<kw name="Execute Sql String" library="DatabaseLibrary">
-<arg>update Products set productname='manoj' where product_id=35656</arg>
-<doc>Executes the sqlString as SQL commands. Useful to pass arguments to your sql. Set optional input `sansTran` to
-True to run command without an explicit transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:27:14.213" level="INFO">Executing : Execute SQL String  |  update Products set productname='manoj' where product_id=35656 </msg>
-<status status="PASS" starttime="20220509 09:27:14.212" endtime="20220509 09:27:15.108"/>
-</kw>
-<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
-<arg>select * from Products where product_id=99007717</arg>
-<arg>1</arg>
-<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
-will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
-transaction commit or rollback.</doc>
-<msg timestamp="20220509 09:27:15.109" level="INFO">Executing : Row Count Is Equal To X  |  select * from Products where product_id=99007717  |  1 </msg>
-<msg timestamp="20220509 09:27:15.109" level="INFO">Executing : Row Count  |  select * from Products where product_id=99007717 </msg>
-<status status="PASS" starttime="20220509 09:27:15.109" endtime="20220509 09:27:15.724"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220509 09:27:15.726" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220509 09:27:15.726" endtime="20220509 09:27:15.727"/>
-</kw>
-<status status="PASS" starttime="20220509 09:27:13.070" endtime="20220509 09:27:15.728"/>
-</test>
-<test id="s1-t5" name="Tc5" line="20">
-<kw name="Connect To Database" library="DatabaseLibrary" type="SETUP">
-<arg>dbapiModuleName=pymysql</arg>
-<arg>dbName=dbfree_db</arg>
-<arg>dbUsername=dbfree_db</arg>
-<arg>dbPassword=12345678</arg>
-<arg>dbHost=db4free.net</arg>
-<arg>dbPort=3306</arg>
-<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
-connect to the database using `dbName`, `dbUsername`, and `dbPassword`.</doc>
-<msg timestamp="20220509 09:27:15.732" level="INFO">Connecting using : pymysql.connect(db=dbfree_db, user=dbfree_db, passwd=12345678, host=db4free.net, port=3306, charset=None) </msg>
-<status status="PASS" starttime="20220509 09:27:15.731" endtime="20220509 09:27:21.558"/>
-</kw>
-<kw name="Query" library="DatabaseLibrary">
-<var>${a}</var>
-<arg>select * from Products</arg>
-<doc>Uses the input `selectStatement` to query for the values that will be returned as a list of tuples. Set optional
-input `sansTran` to True to run command without an explicit transaction commit or rollback.
-Set optional input `returnAsDict` to True to return values as a list of dictionaries.</doc>
-<msg timestamp="20220509 09:27:21.560" level="INFO">Executing : Query  |  select * from Products </msg>
-<msg timestamp="20220509 09:27:22.062" level="INFO">${a} = ((1, 'Basu', 'ji'), (10, 'Basu', '7 plus 128 Gb'), (11, 'Basu', 'mayank'), (12, 'product', 'hi'), (13, 'Basu', 'xxx'), (14, 'Air india', 'domestic'), (15, 'Air india', 'domestic'), (23, 'Basu', 'justn...</msg>
-<status status="PASS" starttime="20220509 09:27:21.559" endtime="20220509 09:27:22.062"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${a}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220509 09:27:22.062" endtime="20220509 09:27:22.103"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>${a}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220509 09:27:22.106" level="INFO">((1, 'Basu', 'ji'), (10, 'Basu', '7 plus 128 Gb'), (11, 'Basu', 'mayank'), (12, 'product', 'hi'), (13, 'Basu', 'xxx'), (14, 'Air india', 'domestic'), (15, 'Air india', 'domestic'), (23, 'Basu', 'justname'), (42, 'Basu', 'isha'), (50, 'apsar', 'justname'), (51, 'apsar', 'justname'), (67, 'Basu', 'justname'), (100, 'Basu', 'amazon'), (101, 'Basu', 'trainee'), (102, 'Basu', 'amazon'), (103, 'Basu', 'name_field'), (111, 'Basu', 'amazon'), (112, 'Air india', 'domestic'), (115, 'Air india', 'domestic'), (120, 'Air india', 'domestic'), (123, 'Basu', 'Govind'), (140, 'ss', 'heloo'), (143, 'Basu', 'student'), (150, 'Air india', 'domestic'), (160, 'Air india', 'domestic'), (180, 'Air india', 'domestic'), (221, 'Basu', '444'), (222, 'Basu', 'yyy'), (223, 'Basu', '444'), (227, 'Basu', '444'), (500, 'Basu', 'mobile'), (512, 'sai', 'B-tech'), (542, 'Basu', 'just name'), (545, 'RASHEL', 'just name'), (587, 'konda', 'M-tech'), (650, 'Basu', 'just name'), (651, 'varsha', 'just name'), (655, 'Nav', 'Hi'), (666, 'Basu', 'another description'), (701, 'Basu', 'my name'), (707, 'daniel', 'just name'), (709, 'Basu', 'my name'), (710, 'Basu', 'my name'), (715, 'Basu', 'my name'), (716, 'Basu', 'my name'), (717, 'Basu', 'my name'), (720, 'sam', 'B-tech'), (730, 'Basu', 'my name'), (740, 'Basu', 'my name'), (811, 'ambika', 'just name'), (812, 'Basu', 'just name'), (1001, 'Basu', '7 plus 128 Gb'), (1002, 'Basu', 'demo'), (1003, 'Basu', 'demo'), (1004, 'Basu', 'aaa'), (1005, 'Basu', 'demo'), (1008, 'Basu', 'aaa'), (1009, 'Basu', 'just name'), (1020, 'Basu', 'name'), (1023, 'Anu', 'name'), (1029, 'Basu', 'student'), (1033, 'Anu', 'name'), (1045, 'Basu', 'bts'), (1048, 'Basu', 'demo'), (1054, 'Basu', 'student'), (1100, 'Basu', 'employee'), (1111, 'Basu', 'student'), (1602, 'Basu', 'fresher'), (1997, 'Basu', 'LAppy'), (1998, 'Basu', '9918989'), (1999, 'Basu', 'Engineer'), (2100, 'Basu', 'demo'), (2500, 'Basu', 'Student'), (2666, 'Sajid', 'another description'), (4001, 'Basu', 'LAppy'), (5000, 'Basu', 'Mobile'), (5001, 'Basu', 'mobile'), (5002, 'Basu', 'Mobile'), (5005, 'Basu', 'Mobile'), (5009, 'Basu', 'mobile'), (5011, 'Basu', 'mobile'), (5012, 'Basu', 'mobile'), (5014, 'Basu', 'mobile'), (5100, 'Basu', 'student'), (6000, 'Basu', 'student'), (7045, 'ss', 'hi'), (9876, 'abcd', 'efgh'), (9900, 'product', 'hi'), (10001, 'Ananda_upadhaya', 'name_field'), (11224, 'jam', 'tech'), (11234, 'abcd', 'efgh'), (12345, 'Basu', 'name_field'), (12399, 'laptop', 'good'), (13224, 'roopsi', 'tech'), (23451, 'pro', 'hai'), (23452, 'pro', 'hai'), (23453, 'pro', 'hai'), (23670, 'pro', 'hai'), (23671, 'pro', 'hai'), (23672, 'bala', 'hai'), (34656, 'hello', 'sdddd'), (35656, 'manoj', 'sdddd'), (50001, 'Basu', 'Laptop'), (50101, 'Basu', 'LAppy'), (98768, 'abcd', 'efgh'), (121212, 'Basu', 'Mobile'), (123456, 'Basu', 'AE'), (123991, 'laptop', 'good'), (345656, 'hello', 'sdddd'), (356567, 'Anchal', 'Tiwari'), (667709, 'roopsi', 'tech'), (995678, 'roopsi', 'tech'), (1239911, 'laptop', 'good'), (1801033, 'laptop', 'good'), (3456756, 'hello', 'sdddd'), (3565679, 'Anchal', 'Tiwari'), (34567567, 'balaji', 'sdddd'), (99007716, 'sakthi', 'name'), (99007717, 'sakthi', 'name'), (99007718, 'janu', 'LTTS'), (99007719, 'laptop', 'good'), (99007736, 'Abhi', 'Tiwari'), (1801033234, 'laptop', 'good'))</msg>
-<status status="PASS" starttime="20220509 09:27:22.104" endtime="20220509 09:27:22.107"/>
-</kw>
-<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
-<doc>Disconnects from the database.</doc>
-<msg timestamp="20220509 09:27:22.110" level="INFO">Executing : Disconnect From Database</msg>
-<status status="PASS" starttime="20220509 09:27:22.109" endtime="20220509 09:27:22.112"/>
-</kw>
-<status status="PASS" starttime="20220509 09:27:15.730" endtime="20220509 09:27:22.113"/>
-</test>
-<status status="FAIL" starttime="20220509 09:26:45.372" endtime="20220509 09:27:22.115"/>
+<status status="PASS" starttime="20220509 13:56:06.625" endtime="20220509 13:56:49.444"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="2" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="2" skip="0" id="s1" name="Demo1">Demo1</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo3">Demo3</stat>
 </suite>
 </statistics>
 <errors>
